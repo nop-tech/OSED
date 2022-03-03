@@ -24,6 +24,20 @@ Changes made by nop:
 - Added line breaks
 - The address gets printed with blue foreground color
 - return 0 was added to main()
+
+
+Example usage:
+PS> .\arwin.exe kernel32.dll ExitThread
+
+=> Will return the address of the ExitThread function in kernel32.dll
+
+----------------
+
+PS C:\Users\Admin > .\arwin.exe kernel32.dll ExitThread
+arwin - win32 address resolution program - by steve hanna - v.01
+
+ExitThread is located at 0x609a45f0 in kernel32.dll
+
 **/
 
 
