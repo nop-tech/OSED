@@ -22,7 +22,6 @@
 - [Brainstorm](https://tryhackme.com/room/brainstorm) by TryHackMe (paid)
 - [Protostar](https://exploit.education/) by Exploit.education (Linux)
 - [vulnserver TRUN](https://github.com/stephenbradshaw/vulnserver) by Stephen Bradshaw
-- [FreeFloat FTP Server](https://www.exploit-db.com/apps/687ef6f72dcbbf5b2506e80a375377fa-freefloatftpserver.zip) via Exploit-DB
 - [MiniShare 1.4.1](https://www.exploit-db.com/apps/0ffe5385147edd1f9e7b460c6d7cb0a6-minishare-1.4.1.zip)
 - [PCMan FTP server 2.0.7](https://www.exploit-db.com/apps/9fceb6fefd0f3ca1a8c36e97b6cc925d-PCMan.7z)
 - [Freefloat FTP Server 1.0](https://www.exploit-db.com/apps/687ef6f72dcbbf5b2506e80a375377fa-freefloatftpserver.zip)
