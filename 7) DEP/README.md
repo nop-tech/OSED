@@ -12,4 +12,10 @@
 - [Defeating DEP the Immunity Debugger way](https://www.immunityinc.com/downloads/DEPLIB.pdf) by Pablo Solé
 - [A Gentle Intro to ROP and Bypassing DEP](https://cwinfosec.org/Intro-ROP-DEP-Bypass/) by cwinfosec
 - [Analysis of a CVE-2013-3906 Exploit](https://www.crowdstrike.com/blog/analysis-cve-2013-3906-exploit/) by Crowdstrike
-- 
+
+
+## Practice Binaries
+
+- [ASX to MP3 Converter 3.1.2.1](https://www.exploit-db.com/apps/b31a84e79d9941d89336b6708ef52a20-ASXtoMP3Converter_3121.exe) (enable DEP)
+- [VUPlayer 2.49](https://www.exploit-db.com/apps/39adeb7fa4711cd1cac8702fb163ded5-vuplayersetup.exe)
+- [DVD X Player 5.5 Pro](https://www.exploit-db.com/apps/cdfda7217304f4deb7d2e8feb5696394-DVDXPlayerSetup.exe)
