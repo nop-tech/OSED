@@ -13,5 +13,6 @@
   - [Part 1](https://marcosvalle.github.io/re/exploit/2018/10/20/windows-manual-shellcode-part1.html)
   - [Part 2](https://marcosvalle.github.io/re/exploit/2018/10/21/windows-manual-shellcode-part2.html)
   - [Part 3](https://marcosvalle.github.io/re/exploit/2018/10/21/windows-manual-shellcode-part3.html)
-  - [MessageBox shellcode](https://marcosvalle.github.io/re/exploit/2019/01/19/messagebox-shellcode.html)
+- [WS32_recv() Reuse](https://connormcgarr.github.io/WS32_recv()-Reuse/) by Connor McGarr
+- [MessageBox shellcode](https://marcosvalle.github.io/re/exploit/2019/01/19/messagebox-shellcode.html)
 
