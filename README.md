@@ -1,7 +1,7 @@
 # OSED
 Containing my notes, practice binaries + solutions, blog posts, etc. for the Offensive Security Exploit Developer (OSED/EXP-301)
 
-> My notes posted on my blog and added here as soon as they are finished.
+> My notes will be posted on my blog and added here as soon as they are finished.
 
 </br>
 
