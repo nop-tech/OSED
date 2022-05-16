@@ -16,6 +16,7 @@
 
 ## Practice Binaries
 
-- [ASX to MP3 Converter 3.1.2.1](https://www.exploit-db.com/apps/b31a84e79d9941d89336b6708ef52a20-ASXtoMP3Converter_3121.exe) (enable DEP)
+- [ASX to MP3 Converter 3.1.2.1](https://www.exploit-db.com/apps/b31a84e79d9941d89336b6708ef52a20-ASXtoMP3Converter_3121.exe) 
 - [VUPlayer 2.49](https://www.exploit-db.com/apps/39adeb7fa4711cd1cac8702fb163ded5-vuplayersetup.exe)
 - [DVD X Player 5.5 Pro](https://www.exploit-db.com/apps/cdfda7217304f4deb7d2e8feb5696394-DVDXPlayerSetup.exe)
+- [Easy File Sharing Web Server 7.2](https://www.exploit-db.com/apps/60f3ff1f3cd34dec80fba130ea481f31-efssetup.exe)
