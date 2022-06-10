@@ -6,11 +6,11 @@ For now, stack protections are disabled and the only challenge is to gain code e
 
 When executing the vulnserver application we are greeted with some text which we can also find when opening the application in IDA and following the first few code blocks:
 
-![e281afc55e05b7993d54a9f2a063446f.png](:../../../99\)%20Images/ed6dfdc7e4fa46de8c2f477f0ddccb9e.png)
+![e281afc55e05b7993d54a9f2a063446f.png](:../../../C\)%20Images/ed6dfdc7e4fa46de8c2f477f0ddccb9e.png)
 
 Using tcpview from sysinternals showed that the application is listening on port 9999 TCP:
 
-![d2a8996546db9ceee1b0800c610c62b9.png](:../../../99\)%20Images/576bf9d55aa4459cb66eda24f821bf1c.png)
+![d2a8996546db9ceee1b0800c610c62b9.png](:../../../C\)%20Images/576bf9d55aa4459cb66eda24f821bf1c.png)
 
 I wrote a small python script to send some gibberish to the application and follow the execution flow in IDA and WinDbg:
 
@@ -44,7 +44,7 @@ As the application is using TCP, a breakpoint can be set at `WS2_32!recv`.
 
 After executing the python script, the breakpoint gets hit and the process gets interruped at `WS2_32!recv`:
 
-![3385f2f4b8d4f053409c2822e1c31a98.png](:../../../99\)%20Images/475c344952004eefb23ea8093f15685b.png)
+![3385f2f4b8d4f053409c2822e1c31a98.png](:../../../C\)%20Images/475c344952004eefb23ea8093f15685b.png)
 
 Using `pt` and `p` it is possible to step out of the receive function, back into the caller function.
 
@@ -52,7 +52,7 @@ Following that address in IDA (`00401958`) it is possible to get a broad overvie
 
 Various call to `_strncmp` are made comparing the first few characters of the buffer with some static strings:
 
-![539068a3d142676a59cc83db879379b4.png](:../../../99\)%20Images/f79e0906a224488d80f6cb3939bbe384.png)
+![539068a3d142676a59cc83db879379b4.png](:../../../C\)%20Images/f79e0906a224488d80f6cb3939bbe384.png)
 
 This section is targeting the TRUN command, so the following changes were made to the python script:
 
@@ -71,7 +71,7 @@ After executing the new script and following the execution flow to the string co
 
 vulnserver is allocating a new memory region using `_malloc` and then initialising it using `_memset`, afterwards a byte comparison at a specific offset is made. If the byte at that specific offset contains a dot (.) a jump is made to a basic block containing a call to `_strncpy` which might be exploitable.
 
-![97c852f58475648140d9de9e55076dfa.png](:../../../99\)%20Images/91d168f04192486bab5e4f91b0b15f73.png)
+![97c852f58475648140d9de9e55076dfa.png](:../../../C\)%20Images/91d168f04192486bab5e4f91b0b15f73.png)
 
 In order to obtain that specific offset in the buffer, the A's were replaced with a unique string pattern created using msf-pattern_create:
 `msf-pattern_create -l 4096`
@@ -90,7 +90,7 @@ payload = prefix + buffer
 A breakpoint was set at the comparison with `2Eh` and the script was executed.
 Dumping the bytes EAX points to reveals that the comparison is starting at the very beginning of the buffer (prefix excluded):
 
-![ff911a7394932f5cec8495af9ea93f92.png](:../../../99\)%20Images/21c5bcf08ef64b6fbbab886921b9d54f.png)
+![ff911a7394932f5cec8495af9ea93f92.png](:../../../C\)%20Images/21c5bcf08ef64b6fbbab886921b9d54f.png)
 
 If the comparison fails (there is no dot at that offset), the offset will be increased and the next byte gets checked. This means in order to perform a jump to the basic block containing a `strncpy` the only requirement the buffer has to meet is containing a dot somewhere.
 
@@ -111,18 +111,18 @@ payload = prefix + buffer + eip + junk
 
 After EIP gets overwriten with 0x42424242 it is possible to dump the stack and check the last address containing 0x43434343 (CCCC). Then this address gets subtracted from the address stored in ESP:
 
-![a306bd38d875d67017fbf683b6f4fbd8.png](:../../../99\)%20Images/7152fc99e6d94815bca025e0a56cf161.png)
+![a306bd38d875d67017fbf683b6f4fbd8.png](:../../../C\)%20Images/7152fc99e6d94815bca025e0a56cf161.png)
 
 Following this step someone would usually check for badchars (besides 0x00) but as there aren't any in the TRUN command, this step will be skipped here.
 
 As the base address of the vulnserver binary contains a NULL-byte, it cannot be used to look for gadgets.
 
 Instead essfunc.dll can be used, as this module gets loaded at `62500000` and does not have ASLR enabled (which can be checked using narly)
-![9cb873592f6c13c4fcdae41f78d06ec5.png](:../../../99\)%20Images/bff263daa0fc47e3a5d04ff30bb6a098.png)
+![9cb873592f6c13c4fcdae41f78d06ec5.png](:../../../C\)%20Images/bff263daa0fc47e3a5d04ff30bb6a098.png)
 
 Knowing this, essfunc can be searched for a `JMP ESP` or `CALL ESP` instruction using the WinDbg search function:
 
-![4baade0e651a260191c045a5726a1772.png](:../../../99\)%20Images/3edc289a45494e92a598efecb74e4f09.png)
+![4baade0e651a260191c045a5726a1772.png](:../../../C\)%20Images/3edc289a45494e92a598efecb74e4f09.png)
 
 At this stage, it is already possible to put everything together and craft a working exploit.
 

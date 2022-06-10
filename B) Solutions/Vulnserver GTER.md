@@ -4,7 +4,7 @@ As with TRUN and GMON, the prefix gets updated accordingly.
 
 This time, there are two calls to `_strncpy`, one of them residing in `_Function1`:
 
-![bc8935e6ca1ae81646852f309a997048.png](:../../../99\)%20Images/daa53b9ab822430992cbf166ec423086.png)
+![bc8935e6ca1ae81646852f309a997048.png](:../../../C\)%20Images/daa53b9ab822430992cbf166ec423086.png)
 
 ```Python
 [...]
@@ -19,7 +19,7 @@ payload = prefix + buffer
 
 Following the execution flow in WinDbg reveals that the second `_strncpy` is vulnerable to a buffer overflow and EIP gets overwritten as soon as the function returns.
 
-![372aa286a0f8a3156e6b4545b0cb2d4d.png](:../../../99\)%20Images/089bfc7c26c4473bacca004624b30a92.png)
+![372aa286a0f8a3156e6b4545b0cb2d4d.png](:../../../C\)%20Images/089bfc7c26c4473bacca004624b30a92.png)
 
 After confirming that GTER is vulnerable, it is time to determine the exact offset to overwrite the instruction pointer:
 
@@ -53,7 +53,7 @@ payload = prefix + buffer + eip + junk
 [...]
 ```
 
-![249d4c7337cdddc2ff23af94b9c23219.png](:../../../99\)%20Images/58c30c6fc3b840e7b06a067a72210ce3.png)
+![249d4c7337cdddc2ff23af94b9c23219.png](:../../../C\)%20Images/58c30c6fc3b840e7b06a067a72210ce3.png)
 
 This means, it is required to either use jumpcode or an egghunter in order to execute the actual shellcode.
 

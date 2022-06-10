@@ -4,7 +4,7 @@ Just like before, the initial Proof of Concept was executed, this time having `G
 
 Following the execution path through IDA and WinDbg, the following byte comparison gets reached:
 
-![7866ad57422c572ec642db02db897806.png](:../../../99\)%20Images/5c2f4fd5c86c4168ab42b2eb045d2656.png)
+![7866ad57422c572ec642db02db897806.png](:../../../C\)%20Images/5c2f4fd5c86c4168ab42b2eb045d2656.png)
 
 First, the address of the buffer is moved into EAX, then the value 5 (stored at ebp+var_418) is added to the address (this is the length of the prefix).
 Afterwards a comparison is made between the first byte and the character `/`.
@@ -28,7 +28,7 @@ An access violation is triggered but the value stored in EIP does not seem to ex
 
 Taking a look at the SEH chain reveals, that it got overwritten using values that are indeed in the pattern:
 
-![a44adbc6b9426357a752fe8bf79c6574.png](:../../../99\)%20Images/38eba8d44e7b48f88db40690d64c2866.png)
+![a44adbc6b9426357a752fe8bf79c6574.png](:../../../C\)%20Images/38eba8d44e7b48f88db40690d64c2866.png)
 
 Letting the execution continue overwrites EIP with `356f4534` which is equivalent to offset 3554 in the pattern (6f45336f equals 3550).
 
@@ -49,7 +49,7 @@ The following WinDbg script was used to look for such a gadget:
 }
 ```
 
-![24778c429d669f6181448fb93d7fd5fb.png](:../../../99\)%20Images/0af185a2b7c0447cb41703c2657ee2ad.png)
+![24778c429d669f6181448fb93d7fd5fb.png](:../../../C\)%20Images/0af185a2b7c0447cb41703c2657ee2ad.png)
 
 Overwriting the SEH chain is not enough though, as it only becomes active in case of an exception (which could get achieved by e.g. overwriting memory regions someone is not supposed to).
 
@@ -84,11 +84,11 @@ In order to jump to the landing pad (NOPs) it is required to calculate the diffe
 
 There are various techniques to find a working address / calculate the required offset. One would be to look for the string `GMON /` and then adding some bytes in order to land somewhere in the buffer:
 
-![ffcd33e2430b9395908ba922b16e65cf.png](:../../../99\)%20Images/d59d637473b24e2384f488ec051891bb.png)
+![ffcd33e2430b9395908ba922b16e65cf.png](:../../../C\)%20Images/d59d637473b24e2384f488ec051891bb.png)
 
 Next, ESP can be subtracted from the address (e.g. `0x0111f1f8`) **after** the shortjump got executed.
 
-![2c574c8517836a7b0211cf7a8dd7f7b1.png](:../../../99\)%20Images/5e0c36bd0b6d4ffbbc652301a771f0d0.png)
+![2c574c8517836a7b0211cf7a8dd7f7b1.png](:../../../C\)%20Images/5e0c36bd0b6d4ffbbc652301a771f0d0.png)
 
 Since an instruction sequence like `add esp, 0x56c` would contain NULL-bytes you have to use a little trick. When working with CPU registers you can always use just a part of it (e.g. instead of RSP, ESP or instead of ESP, SP):
 
