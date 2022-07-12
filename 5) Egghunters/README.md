@@ -2,7 +2,7 @@
 
 ## Blog posts, Papers, and Theory
 
-- [Exploit writing tutorial part 8: Win32 Egg Hunting](https://www.corelan.be/index.php/2010/02/25/exploit-writing-tutorial-part-9-introduction-to-win32-shellcoding/) by Corelan
+- [Exploit writing tutorial part 8: Win32 Egg Hunting](https://www.corelan.be/index.php/2010/01/09/exploit-writing-tutorial-part-8-win32-egg-hunting/) by Corelan
 - [WoW64 Egghunter](https://www.corelan.be/index.php/2011/11/18/wow64-egghunter/) by Corelan
 - [Windows Exploit Development - Part 5: Locating Shellcode With Egghunting](http://www.securitysift.com/windows-exploit-development-part-5-locating-shellcode-egghunting/) by Securitysift
 - [Part 4: Egg Hunters](http://www.fuzzysecurity.com/tutorials/expDev/4.html) by Fuzzysecurity
