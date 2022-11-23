@@ -2,7 +2,7 @@
 
 ## Blog posts, Papers, and Theory
 
-- [Binary Exploit Development Part 4: Bypassing DEP With VirtualAlloc](https://guidedhacking.com/threads/binary-exploit-development-4-how-to-bypass-dep-stack-protection.20109/)
+- [Binary Exploit Development Part 4: Bypassing DEP With VirtualAlloc](https://guidedhacking.com/threads/binary-exploit-development-4-how-to-bypass-dep-stack-protection.20109/) by nop
 
 - [Exploit writing tutorial part 6: Bypassing Stack Cookies, SafeSeh, SEHOP, HW DEP and ASLR](https://www.corelan.be/index.php/2009/09/21/exploit-writing-tutorial-part-6-bypassing-stack-cookies-safeseh-hw-dep-and-aslr/) by Corelan
 - [Exploit writing tutorial part 10: Changing DEP with ROP - the Rubik's Cube](https://www.corelan.be/index.php/2010/06/16/exploit-writing-tutorial-part-10-chaining-dep-with-rop-the-rubikstm-cube/) by Corelan
