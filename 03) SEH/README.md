@@ -11,7 +11,7 @@
 - [Windows Exploit Development - Part 6: SEH Exploits](http://www.securitysift.com/windows-exploit-development-part-6-seh-exploits/) by Securitysift
 - [Part 3: Structured Exception Handler (SEH)](http://www.fuzzysecurity.com/tutorials/expDev/3.html) by Fuzzysecurity
 - [Windows Exploit Development - Part 4 [Overwriting SEH with Buffer Overflows]](https://www.shogunlab.com/blog/2017/11/06/zdzg-windows-exploit-4.html) by Shogun Lab
-- [Developing remote SEH overwrite exploit for Integard Pro 2.2.0.9026](https://learnexploitdevelopment.com/developing-remote-seh-overwrite-exploit-for-integard-pro/) by learnexploitdevelopment
+- [Developing remote SEH overwrite exploit for Integard Pro 2.2.0.9026](https://exploit.blackhat.dev/developing-remote-seh-overwrite-exploit-for-integard-pro/) by Yaksas CSC
 
 
 ***
