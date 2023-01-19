@@ -6,6 +6,8 @@
 - [Binary Exploit Development 4 - DEP Bypass with VirtualAlloc (video)](https://youtu.be/phVz8CqEng8) by nop
 - [Binary Exploit Development 5 - DEP Bypass With WriteProcessMemory](https://guidedhacking.com/threads/exploit-development-5-dep-bypass-with-writeprocessmemory.20164/) by nop
 - [Exploit Development 5 - DEP Bypass with WriteProcessMemory (video)](https://youtu.be/8kYTDK9oKV8) by nop
+- [Binary Exploit Development 6 - Writing A ROP Decoder](https://guidedhacking.com/threads/binary-exploit-development-6-writing-a-rop-decoder.20184/) by nop
+- [Exploit Development Part 6 - Writing A ROP Decoder (video)](https://www.youtube.com/watch?v=muhqy8tm2nc) by nop
 - [Exploit writing tutorial part 6: Bypassing Stack Cookies, SafeSeh, SEHOP, HW DEP and ASLR](https://www.corelan.be/index.php/2009/09/21/exploit-writing-tutorial-part-6-bypassing-stack-cookies-safeseh-hw-dep-and-aslr/) by Corelan
 - [Exploit writing tutorial part 10: Changing DEP with ROP - the Rubik's Cube](https://www.corelan.be/index.php/2010/06/16/exploit-writing-tutorial-part-10-chaining-dep-with-rop-the-rubikstm-cube/) by Corelan
 
