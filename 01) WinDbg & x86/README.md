@@ -8,7 +8,7 @@
 
 ## WinDbg
 
-- [WinDbg Cheat Sheet](https://sites.google.com/site/taesaza0/etc/windbgcheatsheet) by Taesaza0
+- [WinDbg Cheat Sheet](https://web.archive.org/web/20220710171907/https://sites.google.com/site/taesaza0/etc/windbgcheatsheet) by Taesaza0
 - [WinDbg Cheat Sheet](https://dblohm7.ca/pmo/windbgcheatsheet.html) by dblohm7
 - [WinDbg Cheat Sheet](https://blog.lamarranet.com/wp-content/uploads/2021/09/WinDbg-Cheat-Sheet.pdf) by lamarranet
 - 
